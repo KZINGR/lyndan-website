@@ -3,26 +3,8 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-bg"></div>
-        <div className="container hero-content">
-          <h1 className="title">
-            Empower Your Operations with <br />
-            <span className="text-gradient">Lyndan Systems</span>
-          </h1>
-          <p className="subtitle">
-            Next-generation enterprise solutions designed for seamless compliance, security, and operational excellence.
-          </p>
-          <div className="hero-actions">
-            <button className="btn btn-primary">Explore Systems</button>
-            <button className="btn btn-outline">Contact Sales</button>
-          </div>
-        </div>
-      </section>
-
       {/* Systems Showcase Section */}
-      <section id="systems" className="section">
+      <section id="systems" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
         <div className="container">
           <div className="text-center">
             <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Ecosystem</h2>
@@ -32,24 +14,42 @@ export default function Home() {
           </div>
 
           <div className="showcase-grid">
-            {/* BCMS Card */}
-            <div className="system-card">
-              <div className="system-image-container">
-                <Image 
-                  src="/bcms.png" 
-                  alt="Building Compliance Management System Dashboard" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+            {/* Asset Management Card */}
+            <div className="system-card card-asset">
+
               <div className="system-icon-wrapper">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
-              <h3 className="system-title">Building Compliance (BCMS)</h3>
+              <p className="system-desc">
+                Centralize your asset lifecycle tracking, maintenance scheduling, and procurement workflows into a single unified platform.
+              </p>
+              <ul className="system-features">
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Lifecycle cost analysis
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Predictive maintenance alerts
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Vendor contract management
+                </li>
+              </ul>
+              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
+            </div>
+
+            {/* BCMS Card */}
+            <div className="system-card card-compliance">
+
+              <div style={{ background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', height: '40px' }}>
+                <Image src="/lyndan-compliance.png" alt="Lyndan Compliance Logo" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: '40px' }} />
+              </div>
               <p className="system-desc">
                 Streamline building compliance workflows, track safety warrants, and ensure regulatory adherence across your entire property portfolio with real-time insights.
               </p>
@@ -71,22 +71,11 @@ export default function Home() {
             </div>
 
             {/* SMS Card */}
-            <div className="system-card">
-              <div className="system-image-container">
-                <Image 
-                  src="/sms.png" 
-                  alt="Sentry Management System Interface" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                />
+            <div className="system-card card-sentry">
+
+              <div style={{ background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', height: '40px' }}>
+                <Image src="/sentry-logo.png" alt="Sentry Logo" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: '40px' }} />
               </div>
-              <div className="system-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <h3 className="system-title">Sentry Management (SMS)</h3>
               <p className="system-desc">
                 Deploy, monitor, and manage your security personnel efficiently. Track live guard patrols, manage incidents, and generate comprehensive daily activity reports.
               </p>

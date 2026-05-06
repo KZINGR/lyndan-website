@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Lyndan | Integrated Management Systems',
@@ -17,21 +18,13 @@ export default function RootLayout({
       <body>
         <nav className="navbar">
           <div className="container navbar-content">
-            <Link href="/" className="logo">
-              <div className="logo-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              Lyndan
+            <Link href="/" className="logo" style={{ padding: '0.5rem 0' }}>
+              <Image src="/lyndan-logo.png" alt="Lyndan Logo" width={160} height={45} style={{ objectFit: 'contain' }} />
             </Link>
             <div className="nav-links">
               <a href="#systems" className="nav-link">Systems</a>
               <a href="#about" className="nav-link">About</a>
               <a href="#contact" className="nav-link">Contact</a>
-            </div>
-            <div>
-              <button className="btn btn-primary">Login</button>
             </div>
           </div>
         </nav>
@@ -41,13 +34,8 @@ export default function RootLayout({
         <footer className="footer">
           <div className="container">
             <div className="footer-content">
-              <div className="logo">
-                <div className="logo-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                Lyndan
+              <div className="logo" style={{ padding: '0.5rem 0' }}>
+                <Image src="/lyndan-logo.png" alt="Lyndan Logo" width={160} height={45} style={{ objectFit: 'contain' }} />
               </div>
               <div className="footer-text">
                 &copy; {new Date().getFullYear()} Lyndan Systems. All rights reserved.
