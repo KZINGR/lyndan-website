@@ -23,7 +23,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="info-label">Phone</h4>
-                  <p className="info-value">+64 (0) 9 123 4567</p>
+                  <p className="info-value">Lynnie: +64 27 250 0808</p>
                 </div>
               </div>
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="info-label">Email</h4>
-                  <p className="info-value">info@lyndan.co.nz</p>
+                  <p className="info-value">office@lyndan.co.nz</p>
                 </div>
               </div>
 

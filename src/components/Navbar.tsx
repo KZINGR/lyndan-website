@@ -35,7 +35,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link href="/#systems" className="nav-link" onClick={closeMenu}>Systems</Link>
+          <Link href="/#services" className="nav-link" onClick={closeMenu}>Services</Link>
           <Link href="/#about" className="nav-link" onClick={closeMenu}>About</Link>
           <Link href="/team" className="nav-link" onClick={closeMenu}>Team</Link>
           <Link href="/contact" className="nav-link" onClick={closeMenu}>Contact</Link>

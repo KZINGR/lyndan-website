@@ -3,97 +3,87 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      {/* Systems Showcase Section */}
-      <section id="systems" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
+      {/* Services Showcase Section */}
+      <section id="services" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
         <div className="container">
           <div className="text-center">
-            <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Ecosystem</h2>
+            <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Services and Systems</h2>
             <p className="subtitle" style={{ marginBottom: '3rem' }}>
-              Discover our integrated suite of specialized management tools.
+              Discover our integrated suite of specialised services and management tools.
             </p>
           </div>
 
           <div className="showcase-grid">
-            {/* Asset Management Card */}
+            {/* Consultation Services Card */}
             <div className="system-card card-asset">
-
-              <div className="system-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                </svg>
+              <div style={{ background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', height: '40px' }}>
+                <Image src="/lyndan-logo.png" alt="Lyndan Logo" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: '40px' }} />
               </div>
-              <p className="system-desc">
-                Centralize your asset lifecycle tracking, maintenance scheduling, and procurement workflows into a single unified platform.
-              </p>
+              <h3 style={{ textAlign: 'center', fontSize: '1.25rem', fontWeight: 600, marginTop: '-0.5rem', marginBottom: '1.5rem' }}>Consultation Services</h3>
               <ul className="system-features">
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Lifecycle cost analysis
+                  Building Warrant of Fitness management and issuing
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Predictive maintenance alerts
+                  Fire evacuation scheme development
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Vendor contract management
+                  Trial evacuation training and execution
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Asset management
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Project management
                 </li>
               </ul>
+              <div style={{ flexGrow: 1 }} />
               <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
             </div>
 
             {/* BCMS Card */}
             <div className="system-card card-compliance">
-
               <div style={{ background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', height: '40px' }}>
                 <Image src="/lyndan-compliance.png" alt="Lyndan Compliance Logo" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: '40px' }} />
               </div>
-              <p className="system-desc">
-                Streamline building compliance workflows, track safety warrants, and ensure regulatory adherence across your entire property portfolio with real-time insights.
-              </p>
-              <ul className="system-features">
+              <h3 style={{ textAlign: 'center', fontSize: '1.25rem', fontWeight: 600, marginTop: '-0.5rem', marginBottom: '1.5rem' }}>Building Compliance Management System</h3>
+              <ul className="system-features" style={{ marginTop: '1rem' }}>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Automated BWoF generation
+                  Cloud based software to manage end to end workflow for BWOF
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Contractor & vendor portals
-                </li>
-                <li>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Interactive asset mapping
+                  Digital BWOF Book accessible to councils, contractors, owners and management entities
                 </li>
               </ul>
-              <button className="btn btn-outline" style={{ width: '100%' }}>Launch BCMS</button>
+              <div style={{ flexGrow: 1 }} />
+              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
             </div>
 
             {/* SMS Card */}
             <div className="system-card card-sentry">
-
               <div style={{ background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', height: '40px' }}>
                 <Image src="/sentry-logo.png" alt="Sentry Logo" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: '40px' }} />
               </div>
-              <p className="system-desc">
-                Deploy, monitor, and manage your security personnel efficiently. Track live guard patrols, manage incidents, and generate comprehensive daily activity reports.
-              </p>
-              <ul className="system-features">
+              <h3 style={{ textAlign: 'center', fontSize: '1.25rem', fontWeight: 600, marginTop: '-0.5rem', marginBottom: '1.5rem' }}>Contractor Building Access System</h3>
+              <ul className="system-features" style={{ marginTop: '1rem' }}>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Live GPS patrol tracking
+                  Contractor building sign-in system focused on commercial and body corporate environments
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Incident reporting engine
-                </li>
-                <li>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  Guard scheduling & rostering
+                  Online live dashboard for admins to manage and view contractor activity on site
                 </li>
               </ul>
-              <button className="btn btn-outline" style={{ width: '100%' }}>Launch SMS</button>
+              <div style={{ flexGrow: 1 }} />
+              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
             </div>
           </div>
         </div>
