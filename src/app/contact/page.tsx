@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -43,31 +44,7 @@ export default function ContactPage() {
             <div className="contact-divider"></div>
 
             <div className="contact-emailer">
-              <form className="contact-form">
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Full Name</label>
-                  <input type="text" id="name" className="form-input" placeholder="John Doe" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email Address</label>
-                  <input type="email" id="email" className="form-input" placeholder="john@example.com" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="subject" className="form-label">Subject</label>
-                  <input type="text" id="subject" className="form-input" placeholder="How can we help you?" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea id="message" className="form-input" rows={6} placeholder="Your message here..." required></textarea>
-                </div>
-
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '1rem' }}>
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

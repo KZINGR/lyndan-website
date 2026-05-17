@@ -88,10 +88,8 @@ a {
   height: 80px;
   display: flex;
   align-items: center;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
   z-index: 100;
   transition: all 0.3s ease;
 }

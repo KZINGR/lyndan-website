@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
                 </li>
               </ul>
               <div style={{ flexGrow: 1 }} />
-              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
+              <Link href="/services/consultation" className="btn btn-outline" style={{ width: '100%', display: 'inline-block', textAlign: 'center' }}>Learn More</Link>
             </div>
 
             {/* BCMS Card */}
@@ -63,7 +64,7 @@ export default function Home() {
                 </li>
               </ul>
               <div style={{ flexGrow: 1 }} />
-              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
+              <Link href="/services/compliance" className="btn btn-outline" style={{ width: '100%', display: 'inline-block', textAlign: 'center' }}>Learn More</Link>
             </div>
 
             {/* SMS Card */}
@@ -83,7 +84,7 @@ export default function Home() {
                 </li>
               </ul>
               <div style={{ flexGrow: 1 }} />
-              <button className="btn btn-outline" style={{ width: '100%' }}>Learn More</button>
+              <Link href="/services/sentry" className="btn btn-outline" style={{ width: '100%', display: 'inline-block', textAlign: 'center' }}>Learn More</Link>
             </div>
           </div>
         </div>

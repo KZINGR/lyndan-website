@@ -3,23 +3,18 @@ import Image from 'next/image';
 
 const teamMembers = [
   {
-    name: 'Sarah Jenkins',
+    name: 'Lynnie Kritzinger',
     role: 'CEO & Founder',
     bio: 'Sarah brings over 20 years of experience in enterprise management systems, leading Lyndan to the forefront of the industry.',
     image: '/sarah_ceo.png'
   },
   {
-    name: 'David Chen',
+    name: 'Dieter Kritzinger',
     role: 'Chief Technology Officer',
     bio: 'With a passion for scalable architecture, David oversees the development of our core Sentry and BCMS platforms.',
     image: '/david_cto.png'
-  },
-  {
-    name: 'Elena Rodriguez',
-    role: 'Head of Operations',
-    bio: 'Elena ensures seamless deployment and client success, driving operational excellence across all our software solutions.',
-    image: '/elena_ops.png'
   }
+
 ];
 
 export default function TeamPage() {
@@ -38,19 +33,19 @@ export default function TeamPage() {
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="team-image-container">
-                  <Image 
-                    src={member.image} 
-                    alt={member.name} 
-                    fill 
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }} 
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>
                   <p className="team-role text-gradient">{member.role}</p>
                   <p className="team-bio">{member.bio}</p>
-                  
+
                   <div className="team-social">
                     <a href="#" className="social-link" aria-label="LinkedIn">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
