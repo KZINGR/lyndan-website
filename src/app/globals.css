@@ -4,17 +4,17 @@
   --primary: #2B5C94;
   --primary-light: #4A7CAF;
   --primary-dark: #1A3E6A;
-  
+
   --secondary: #0ea5e9;
   --accent: #38bdf8;
-  
+
   --bg-dark: #f8fafc;
   --bg-card: #ffffff;
   --bg-card-hover: #f1f5f9;
-  
+
   --text-main: #0f172a;
   --text-muted: #475569;
-  
+
   --border-color: rgba(0, 0, 0, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.05);
@@ -29,6 +29,11 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
+  background-image: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(248, 250, 252, 0.5) 100%), url('/blueprint-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
@@ -40,14 +45,21 @@ a {
 }
 
 /* Typography Utilities */
-.text-center { text-align: center; }
-.text-primary { color: var(--primary-light); }
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-light);
+}
+
 .text-gradient {
   background: linear-gradient(90deg, var(--primary-light), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -55,8 +67,11 @@ a {
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
+
 @media (max-width: 768px) {
-  .title { font-size: 2.5rem; }
+  .title {
+    font-size: 2.5rem;
+  }
 }
 
 .subtitle {
@@ -176,7 +191,8 @@ a {
 
   .nav-links {
     position: fixed;
-    top: 80px; /* Below navbar */
+    top: 80px;
+    /* Below navbar */
     left: 0;
     width: 100%;
     background: var(--bg-card);
@@ -245,7 +261,7 @@ a {
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vw;
-  background: radial-gradient(circle, rgba(43,92,148,0.15) 0%, rgba(15,23,42,0) 70%);
+  background: radial-gradient(circle, rgba(43, 92, 148, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -279,8 +295,10 @@ a {
 }
 
 .system-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 24px;
   padding: 2.5rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -315,8 +333,10 @@ a {
 }
 
 .system-card.card-asset::before {
-  background: linear-gradient(90deg, #06b6d4, #22d3ee); /* Cyan */
+  background: linear-gradient(90deg, #06b6d4, #22d3ee);
+  /* Cyan */
 }
+
 .system-card.card-asset:hover {
   box-shadow: 0 20px 40px rgba(6, 182, 212, 0.25);
   border-color: rgba(6, 182, 212, 0.35);
@@ -325,14 +345,17 @@ a {
 .system-card.card-compliance::before {
   background: linear-gradient(90deg, var(--primary-light), var(--secondary));
 }
+
 .system-card.card-compliance:hover {
   box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
   border-color: rgba(14, 165, 233, 0.35);
 }
 
 .system-card.card-sentry::before {
-  background: linear-gradient(90deg, #7c3aed, #c084fc); /* Sentry Purple */
+  background: linear-gradient(90deg, #7c3aed, #c084fc);
+  /* Sentry Purple */
 }
+
 .system-card.card-sentry:hover {
   box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
   border-color: rgba(124, 58, 237, 0.3);
@@ -406,7 +429,7 @@ a {
   border-top: 1px solid var(--border-color);
   padding: 4rem 0;
   margin-top: 4rem;
-  background: rgba(0,0,0,0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .footer-content {
@@ -427,6 +450,7 @@ a {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -434,9 +458,26 @@ a {
 }
 
 /* Utilities */
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mt-8 { margin-top: 2rem; }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+/* Blueprint background style */
+.bg-blueprint {
+  background-image: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(248, 250, 252, 0.5) 100%), url('/blueprint-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /* Contact Page Layout */
 .contact-layout {
@@ -445,14 +486,17 @@ a {
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 2.5rem;
   border-radius: 24px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.contact-emailer, .contact-details {
+.contact-emailer,
+.contact-details {
   flex: 1;
 }
 
@@ -464,10 +508,11 @@ a {
 
 @media (min-width: 768px) {
   .contact-layout {
-    flex-direction: row-reverse; /* Puts details on right, emailer on left */
+    flex-direction: row-reverse;
+    /* Puts details on right, emailer on left */
     gap: 3rem;
   }
-  
+
   .contact-divider {
     height: auto;
     width: 1px;
@@ -551,8 +596,10 @@ a.info-group:hover .info-value {
 }
 
 .team-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
