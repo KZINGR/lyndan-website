@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       {/* Services Showcase Section */}
-      <section id="services" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
+      <section id="about" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
         <div className="container">
           <div className="text-center">
             <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Services and Systems</h2>
@@ -22,6 +22,10 @@ export default function Home() {
               </div>
               <h3 style={{ textAlign: 'center', fontSize: '1.25rem', fontWeight: 600, marginTop: '-0.5rem', marginBottom: '1.5rem' }}>Consultation Services</h3>
               <ul className="system-features">
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  Facilities Management
+                </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                   Building Warrant of Fitness management and issuing

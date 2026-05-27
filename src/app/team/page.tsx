@@ -4,14 +4,14 @@ import Image from 'next/image';
 const teamMembers = [
   {
     name: 'Lynnie Kritzinger',
-    role: 'CEO & Founder',
-    bio: 'Sarah brings over 20 years of experience in enterprise management systems, leading Lyndan to the forefront of the industry.',
+    role: 'BC Consultant | Co-Founder',
+    bio: 'Lynnie brings over 5 years of experience in enterprise management systems, leading Lyndan to the forefront of the industry.',
     image: '/sarah_ceo.png'
   },
   {
     name: 'Dieter Kritzinger',
-    role: 'Chief Technology Officer',
-    bio: 'With a passion for scalable architecture, David oversees the development of our core Sentry and BCMS platforms.',
+    role: 'CEO | Co-Founder',
+    bio: 'With a passion for scalable architecture, Dieter oversees the development of our core Sentry and BCMS platforms.',
     image: '/david_cto.png'
   }
 
