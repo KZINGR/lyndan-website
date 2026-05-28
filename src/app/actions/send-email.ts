@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 
 
 
-export async function sendEmail(prevState: any, formData: FormData) {
+export async function sendEmail(prevState: unknown, formData: FormData) {
   try {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;

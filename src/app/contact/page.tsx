@@ -16,7 +16,7 @@ export default function ContactPage() {
           <div className="contact-layout">
             <div className="contact-details">
               <h3 className="details-title">Contact Information</h3>
-              <p className="details-text">We'd love to hear from you. Please use our contact details or send us a message directly.</p>
+              <p className="details-text">We&apos;d love to hear from you. Please use our contact details or send us a message directly.</p>
 
 
 

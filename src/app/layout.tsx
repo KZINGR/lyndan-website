@@ -28,11 +28,11 @@ export default function RootLayout({
                 <Image src="/lyndan-logo.png" alt="Lyndan Logo" width={160} height={45} style={{ objectFit: 'contain' }} />
               </div>
               <div className="footer-text">
-                &copy; {new Date().getFullYear()} Lyndan Systems. All rights reserved.
+                &copy; {new Date().getFullYear()} Lyndan Limited. All rights reserved.
               </div>
               <div className="nav-links">
-                <a href="#" className="nav-link">Privacy Policy</a>
-                <a href="#" className="nav-link">Terms of Service</a>
+                <Link href="/privacy" className="nav-link">Privacy Policy</Link>
+                <Link href="/terms" className="nav-link">Terms of Service</Link>
               </div>
             </div>
           </div>

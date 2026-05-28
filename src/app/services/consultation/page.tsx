@@ -14,7 +14,7 @@ export default function ConsultationServices() {
         <div className="container text-center">
           <h1 className="title" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Expert Building Compliance Consultation</h1>
           <p className="subtitle" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
-            Navigating New Zealand's complex building and fire safety legislation to ensure your premises remain fully compliant, safe, and operational.
+            Navigating New Zealand&apos;s complex building and fire safety legislation to ensure your premises remain fully compliant, safe, and operational.
           </p>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function ConsultationServices() {
                 </li>
                 <li style={{ alignItems: 'flex-start' }}>
                   <svg style={{ marginTop: '0.25rem', minWidth: '20px' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span><strong>Owner Support:</strong> Providing guidance and training for owners' monthly inspections to reduce costs and maintain proactive compliance.</span>
+                  <span><strong>Owner Support:</strong> Providing guidance and training for owners&apos; monthly inspections to reduce costs and maintain proactive compliance.</span>
                 </li>
                 <li style={{ alignItems: 'flex-start' }}>
                   <svg style={{ marginTop: '0.25rem', minWidth: '20px' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>

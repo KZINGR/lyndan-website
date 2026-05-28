@@ -25,7 +25,7 @@ export default function TeamPage() {
           <div className="text-center">
             <h1 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Meet the Team</h1>
             <p className="subtitle" style={{ marginBottom: '4rem' }}>
-              The dedicated professionals behind Lyndan's cutting-edge management systems.
+              The dedicated professionals behind Lyndan&apos;s cutting-edge management systems.
             </p>
           </div>
 
