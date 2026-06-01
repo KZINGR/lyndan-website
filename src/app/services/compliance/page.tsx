@@ -23,7 +23,7 @@ export default function ComplianceServices() {
       <section className="section" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}>
-            
+
             {/* Core Features */}
             <div className="system-card card-compliance" style={{ height: 'auto', gridColumn: '1 / -1' }}>
               <h2 style={{ fontSize: '1.75rem', fontWeight: 600, marginBottom: '2rem' }}>Core Software Features</h2>
@@ -31,7 +31,7 @@ export default function ComplianceServices() {
                 <div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>End-to-End Workflow</h3>
                   <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Manage the entire BWoF process from a centralized platform, effortlessly tracking inspections, identifying defects, and managing documentation in real-time.
+                    Manage the entire BWoF process from a centralised platform, effortlessly tracking inspections, identifying defects, and managing documentation in real-time.
                   </p>
                 </div>
                 <div>
@@ -47,7 +47,7 @@ export default function ComplianceServices() {
                   </p>
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Centralized Document Storage</h3>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Centralised Document Storage</h3>
                   <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     Securely store essential compliance forms such as Form 12s, Form 12As, compliance schedules, and historical records all in one accessible location.
                   </p>
@@ -62,7 +62,7 @@ export default function ComplianceServices() {
       {/* CTA Section */}
       <section className="section" style={{ paddingTop: '4rem', paddingBottom: '6rem', backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>
         <div className="container text-center">
-          <h2 className="title" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to modernize your compliance?</h2>
+          <h2 className="title" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to modernise your compliance?</h2>
           <p className="subtitle" style={{ marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
             Book a demo today to see how Lyndan Compliance can bring transparency and efficiency to your BWoF process.
           </p>
