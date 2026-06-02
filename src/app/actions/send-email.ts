@@ -22,8 +22,7 @@ export async function sendEmail(prevState: unknown, formData: FormData) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const data = await resend.emails.send({
-      // If you haven't verified a domain in Resend, you must use onboarding@resend.dev
-      from: 'Contact Form <onboarding@resend.dev>', 
+      from: 'Contact Form <office@lyndan.co.nz>',
       to: ['office@lyndan.co.nz'],
       replyTo: email,
       subject: `New Enquiry: ${subject}`,
