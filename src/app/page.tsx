@@ -8,7 +8,7 @@ export default function Home() {
       <section id="about" className="section" style={{ paddingTop: '8rem', minHeight: 'calc(100vh - 80px)' }}>
         <div className="container">
           <div className="text-center">
-            <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Services and Systems</h2>
+            <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Services and Systems</h2>
             <p className="subtitle" style={{ marginBottom: '3rem' }}>
               Discover our integrated suite of specialised services and management tools.
             </p>

@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <Navbar />
         
         {children}
@@ -30,7 +30,7 @@ export default function RootLayout({
               <div className="footer-text">
                 &copy; {new Date().getFullYear()} Lyndan Limited. All rights reserved.
               </div>
-              <div className="nav-links">
+              <div className="footer-links">
                 <Link href="/privacy" className="nav-link">Privacy Policy</Link>
                 <Link href="/terms" className="nav-link">Terms of Service</Link>
               </div>

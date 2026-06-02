@@ -444,6 +444,11 @@ a {
   color: var(--text-muted);
 }
 
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
