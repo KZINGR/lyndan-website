@@ -5,14 +5,14 @@ const teamMembers = [
   {
     name: 'Lynnie Kritzinger',
     role: 'BC Consultant | Co-Founder',
-    bio: 'Lynnie brings over 5 years of experience in enterprise management systems, leading Lyndan to the forefront of the industry.',
+    bio: 'Lynnie is our leading expert in building compliance and health & safety. With a comprehensive background in commercial, residential, and Body Corporate property management, she handles all facets of asset protection, risk management, and contractor oversight. Whether navigating BWOF requirements or coordinating complex fire evacuation planning, Lynnie’s practical approach and strong relationships with councils and contractors ensure our clients assets remain fully compliant and flawlessly maintained.',
     image: '/Lynnie Web.jpg',
     linkedin: 'https://www.linkedin.com/in/lynnie-kritzinger-lyndan/'
   },
   {
     name: 'Dieter Kritzinger',
-    role: 'CEO | Co-Founder',
-    bio: 'With a passion for scalable architecture, Dieter oversees the development of our core Sentry and BCMS platforms.',
+    role: 'Director | Co-Founder',
+    bio: 'Dieter oversees business development and the architectural vision for our flagship Sentry and Lyndan Compliance platforms. With a career rooted in dairy manufacturing asset management, Dieter brings an invaluable blend of design, electrical, mechanical, and construction engineering experience to the executive team. His unique ability to translate heavy engineering logic into scalable digital architecture allows him to drive both product innovation and business growth from the ground up.',
     image: '/Dieter Web.jpg',
     linkedin: 'https://www.linkedin.com/in/dieter-kritzinger/'
   }
