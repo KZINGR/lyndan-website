@@ -9,17 +9,19 @@ export default function TermsPage() {
   const sections = [
     { id: 'introduction', title: '1. Introduction & Acceptance' },
     { id: 'services', title: '2. Our Services & Platforms' },
-    { id: 'client-obligations', title: '3. Client Obligations' },
-    { id: 'accounts', title: '4. Account Registration & Security' },
-    { id: 'fees', title: '5. Fees, Invoicing & GST' },
-    { id: 'intellectual-property', title: '6. Intellectual Property' },
-    { id: 'liability', title: '7. Limitation of Liability' },
-    { id: 'warranties', title: '8. Disclaimers & Warranties' },
-    { id: 'indemnity', title: '9. Indemnity' },
-    { id: 'termination', title: '10. Term & Termination' },
-    { id: 'governing-law', title: '11. Governing Law & Jurisdiction' },
-    { id: 'changes', title: '12. Changes to Terms' },
-    { id: 'contact', title: '13. Contact Information' },
+    { id: 'commencement-term', title: '3. Commencement & Term' },
+    { id: 'client-obligations', title: '4. Client Obligations' },
+    { id: 'lyndans-obligations', title: '5. Lyndan\'s Obligations' },
+    { id: 'accounts', title: '6. Account Registration & Security' },
+    { id: 'fees', title: '7. Fees, Invoicing & GST' },
+    { id: 'data-privacy', title: '8. Data & Privacy' },
+    { id: 'warranties', title: '9. Warranties & Consumer Guarantees' },
+    { id: 'liability', title: '10. Limitation of Liability' },
+    { id: 'indemnity', title: '11. Indemnity' },
+    { id: 'termination', title: '12. Termination' },
+    { id: 'dispute-resolution', title: '13. Dispute Resolution' },
+    { id: 'force-majeure', title: '14. Force Majeure' },
+    { id: 'general', title: '15. General' },
   ];
 
   return (
@@ -29,10 +31,10 @@ export default function TermsPage() {
           <div className="text-center" style={{ marginBottom: '4rem' }}>
             <h1 className="title" style={{ fontSize: '3rem', marginBottom: '1rem' }}>Terms of Service</h1>
             <p className="subtitle" style={{ marginBottom: '1.5rem', maxWidth: '700px' }}>
-              Please read these Terms of Service carefully. They govern your access to and use of Lyndan&apos;s consultancy services and software applications.
+              Please read these Terms of Service carefully. They govern your access to and use of Lyndan&apos;s consultancy services, software applications, and platforms.
             </p>
             <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-              Last Updated: May 28, 2026
+              Last Updated: July 1, 2026
             </div>
           </div>
 
@@ -64,7 +66,10 @@ export default function TermsPage() {
                   Welcome to Lyndan Limited (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). These Terms of Service (&quot;Terms&quot;) govern the relationship between Lyndan Limited and you, the client or user (&quot;you&quot; or &quot;your&quot;), regarding your access to and use of our website, our consultation services, and our proprietary software applications.
                 </p>
                 <p>
-                  By executing a service agreement with us, registering an account, or accessing/using our services and software applications, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as our Privacy Policy.
+                  These Terms are governed by the laws of New Zealand and incorporate the parties&apos; obligations under applicable legislation, including the Building Act 2004, the Construction Contracts Act 2002, the Health and Safety at Work Act 2015, the Privacy Act 2020, the Fair Trading Act 1986, and the Contract and Commercial Law Act 2017.
+                </p>
+                <p>
+                  By executing a service agreement with us, signing a purchase order, registering an account, or accessing/using our services and software applications, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as our Privacy Policy.
                 </p>
                 <p>
                   If you are entering into these Terms on behalf of a company, body corporate, trust, partnership, or other legal entity, you represent and warrant that you have the authority to bind such entity to these Terms. If you do not have such authority, or if you do not agree with these Terms, you must not accept these Terms and may not use our services or applications.
@@ -74,7 +79,7 @@ export default function TermsPage() {
               <div id="services" className="terms-section">
                 <h2>2. Our Services &amp; Platforms</h2>
                 <p>
-                  Lyndan Limited provides a suite of integrated facilities management and building compliance solutions:
+                  Lyndan Limited provides a suite of integrated facilities management, building compliance, and safety solutions:
                 </p>
                 <ul>
                   <li>
@@ -92,21 +97,59 @@ export default function TermsPage() {
                 </p>
               </div>
 
+              <div id="commencement-term" className="terms-section">
+                <h2>3. Commencement &amp; Term</h2>
+                <ul>
+                  <li>
+                    <strong>Commencement:</strong> Services commence on the date specified in the accompanying quotation or proposal, or the date of the signed Purchase Order/Service Agreement, whichever is later.
+                  </li>
+                  <li>
+                    <strong>Initial Term:</strong> For building compliance and management advisory services, the initial term is twelve (12) months, unless otherwise agreed in writing. For standalone software subscriptions (Compliance or Sentry apps), the term is as specified on your signup invoice or purchase order.
+                  </li>
+                  <li>
+                    <strong>Rolling Term:</strong> After the initial term (or subscription period), the engagement continues on a rolling monthly basis, subject to thirty (30) days&apos; written notice of termination by either party.
+                  </li>
+                  <li>
+                    <strong>Construction Contract:</strong> For the avoidance of doubt, this agreement constitutes a &quot;construction contract&quot; for the purposes of the Construction Contracts Act 2002 to the extent that it relates to construction work as defined in that Act.
+                  </li>
+                </ul>
+              </div>
+
               <div id="client-obligations" className="terms-section">
-                <h2>3. Client Obligations</h2>
+                <h2>4. Client Obligations</h2>
                 <p>
-                  To enable us to provide our Consultation Services and ensure the proper functioning of our applications, you agree to:
+                  The Client (including building owners, body corporates, and managing agents) agrees to:
                 </p>
                 <ol>
-                  <li>Provide us with prompt, accurate, and complete information regarding your properties, compliance schedules, and personnel.</li>
-                  <li>Ensure our representatives, subcontractors, and authorized Independent Qualified Persons (IQPs) are granted safe and timely access to your premises as required for building compliance and system checks.</li>
-                  <li>Maintain all building safety systems in accordance with your compliance schedules and legislation.</li>
+                  <li>Provide Lyndan with timely and safe access to the building and its specified systems for inspections and compliance activities.</li>
+                  <li>Provide current compliance schedules, existing Form 12A documentation, and any relevant historical records at the outset of the engagement.</li>
+                  <li>Notify Lyndan promptly of any changes to building systems, ownership, management, or Territorial Authority requirements.</li>
+                  <li>Respond to defect escalations and remediation recommendations within reasonable timeframes to avoid compliance delays.</li>
+                  <li>Ensure Lyndan has current contact details for all relevant stakeholders.</li>
+                  <li>Comply with its obligations as a PCBU (Person Conducting a Business or Undertaking) under the Health and Safety at Work Act 2015, including ensuring the building site is safe for Lyndan personnel and contractors to carry out compliance activities.</li>
+                  <li>Ensure all information provided to Lyndan is accurate and not misleading, consistent with the principles of the Fair Trading Act 1986.</li>
                   <li>Ensure that your use of the Sentry system (app) and Compliance system (app) complies with all applicable health and safety laws, fire regulations, and privacy rules in New Zealand.</li>
                 </ol>
               </div>
 
+              <div id="lyndans-obligations" className="terms-section">
+                <h2>5. Lyndan&apos;s Obligations</h2>
+                <p>
+                  Lyndan agrees to:
+                </p>
+                <ul>
+                  <li>Perform all services with due care, skill, and diligence in accordance with current New Zealand building compliance legislation and recognised industry best practice.</li>
+                  <li>Maintain the BCMS platform in accordance with the Service Level commitments.</li>
+                  <li>Comply with its obligations as a PCBU under the Health and Safety at Work Act 2015, including ensuring the health and safety of its workers and other persons are not put at risk from work carried out by Lyndan.</li>
+                  <li>Protect the confidentiality of all building and client data in accordance with the Privacy Act 2020 and the Information Privacy Principles set out in that Act.</li>
+                  <li>Not make any misleading or deceptive representations regarding its services, consistent with the Fair Trading Act 1986.</li>
+                  <li>Maintain appropriate professional indemnity and public liability insurance for the duration of the engagement.</li>
+                  <li>Notify the Client promptly of any material compliance risks, defects, or regulatory changes that may affect the building.</li>
+                </ul>
+              </div>
+
               <div id="accounts" className="terms-section">
-                <h2>4. Account Registration &amp; Security</h2>
+                <h2>6. Account Registration &amp; Security</h2>
                 <p>
                   Access to our Sentry system (app) and Compliance system (app) requires you to register and maintain an active account. You must provide accurate, current, and complete details during registration.
                 </p>
@@ -116,132 +159,178 @@ export default function TermsPage() {
               </div>
 
               <div id="fees" className="terms-section">
-                <h2>5. Fees, Invoicing &amp; GST</h2>
+                <h2>7. Fees, Invoicing &amp; GST</h2>
                 <p>
-                  Unless otherwise specified in a separate signed service agreement, the following financial terms apply:
+                  Unless otherwise specified in a separate signed service agreement or quotation, the following terms apply:
                 </p>
                 <ul>
                   <li>
-                    <strong>Fees:</strong> You agree to pay all fees and charges associated with your selected service package or subscription plan in accordance with the billing terms in effect at the time.
+                    <strong>Fees:</strong> All fees are as specified in the accompanying quotation, proposal, or subscription plan. You agree to pay all fees and charges in accordance with the billing terms in effect.
                   </li>
                   <li>
-                    <strong>GST:</strong> All fees quoted by Lyndan Limited are exclusive of New Zealand Goods and Services Tax (GST) unless explicitly stated otherwise. You must pay GST in addition to the fees at the rate applicable by law (currently 15%).
+                    <strong>GST:</strong> All fees are exclusive of GST, which will be added at the prevailing rate under the Goods and Services Tax Act 1985 (currently 15%).
                   </li>
                   <li>
-                    <strong>Payment Terms:</strong> Invoices are payable within 14 days of the date of invoice, or by the 20th of the month following the date of invoice, as specified on your invoice or agreement.
+                    <strong>Payment Claims &amp; Due Date:</strong> Invoices are issued monthly in advance (or as specified in the quotation) and constitute payment claims under the Construction Contracts Act 2002. The due date for payment is the 20th of the month following the invoice date, unless otherwise agreed in writing.
                   </li>
                   <li>
-                    <strong>Overdue Accounts:</strong> We reserve the right to charge interest on overdue amounts at a rate of 2% per month above the base lending rate of our primary bank, computed daily. You will also be liable for all collection costs, legal fees, and administrative charges incurred by us in recovering unpaid balances.
+                    <strong>Payment Schedule (CCA Section 21):</strong> The Client may provide a payment schedule under section 21 of the Construction Contracts Act 2002 within 20 working days of receiving a payment claim. If no payment schedule is provided within that period, the full amount claimed becomes due.
+                  </li>
+                  <li>
+                    <strong>Overdue Accounts:</strong> Lyndan reserves the right to charge interest on overdue amounts at a rate of 1.5% per month (or the maximum rate permitted by law, whichever is lower), calculated daily from the due date until payment is received in full. You will also be liable for all collection costs, legal fees, and administrative charges incurred by us in recovering unpaid balances.
+                  </li>
+                  <li>
+                    <strong>Dispute Rights:</strong> In the event of a payment dispute, either party may exercise its rights under Part 3 of the Construction Contracts Act 2002, including the right to refer the dispute to adjudication.
                   </li>
                 </ul>
               </div>
 
-              <div id="intellectual-property" className="terms-section">
-                <h2>6. Intellectual Property Rights</h2>
-                <p>
-                  Lyndan Limited (and its licensors) retains all right, title, and interest in and to our website, Consultation Services material, the Compliance system (app), and the Sentry system (app), including all software code, databases, design layouts, graphics, trademarks, logos, and any enhancements or modifications made to them.
-                </p>
-                <p>
-                  We grant you a limited, non-exclusive, non-transferable, revocable license to access and use our software systems solely for your internal business operations in accordance with these Terms and during the term of your active subscription. You must not copy, modify, distribute, reverse engineer, or create derivative works based on our software or intellectual property.
-                </p>
-              </div>
-
-              <div id="liability" className="terms-section">
-                <h2>7. Limitation of Liability</h2>
-                <p>
-                  To the maximum extent permitted by New Zealand law:
-                </p>
+              <div id="data-privacy" className="terms-section">
+                <h2>8. Data &amp; Privacy</h2>
                 <ul>
-                  <li>Our total liability to you for any claim arising out of or in connection with these Terms, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, will be strictly limited to the total fees paid by you to Lyndan Limited in the twelve (12) months preceding the event giving rise to the claim.</li>
-                  <li>We will not be liable for any indirect, incidental, special, exemplary, punitive, or consequential damages, including loss of profits, loss of revenue, loss of data, business interruption, or costs of procurement of substitute services.</li>
-                  <li>We are not responsible or liable for any penalties, regulatory fines, or damages arising from building compliance failures, late BWoF submissions, or safety issues caused by your failure to follow our recommendations, perform necessary maintenance, or provide required building access.</li>
+                  <li>
+                    <strong>Data Ownership:</strong> All building compliance data entered into the BCMS/Compliance platform remains the property of the building owner.
+                  </li>
+                  <li>
+                    <strong>Privacy Act 2020:</strong> Lyndan will collect, hold, use, and disclose personal information only in accordance with the Privacy Act 2020 and the Information Privacy Principles (IPPs). Our full Privacy Policy is available at <a href="/privacy" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>lyndan.co.nz/privacy</a>.
+                  </li>
+                  <li>
+                    <strong>Hosting:</strong> Data is hosted on secure, New Zealand or Australian–based cloud infrastructure.
+                  </li>
+                  <li>
+                    <strong>Post-Termination Export &amp; Deletion:</strong> Upon termination of services, Lyndan will provide a complete data export of all compliance records to the Client within thirty (30) business days of the termination date, in PDF format. Following confirmation of receipt, Lyndan will securely delete the Client&apos;s data within a further thirty (30) business days unless retention is required by law.
+                  </li>
                 </ul>
               </div>
 
               <div id="warranties" className="terms-section">
-                <h2>8. Disclaimers &amp; Warranties</h2>
-                <p>
-                  We provide our Consultation Services and software applications with reasonable care and skill. However, to the maximum extent permitted by law, they are provided on an &quot;as is&quot; and &quot;as available&quot; basis without any additional warranties of any kind.
-                </p>
-                <p>
-                  <strong>Business Exclusions:</strong> You acknowledge that you are acquiring our services and software applications for the purposes of a business. Accordingly, you agree that the provisions of the New Zealand Consumer Guarantees Act 1993 and sections 9, 12A, and 13 of the Fair Trading Act 1986 will not apply to our relationship, and that this exclusion is fair and reasonable.
-                </p>
-                <p>
-                  We do not guarantee that our software systems (Compliance system (app) and Sentry system (app)) will be completely error-free, uninterrupted, or immune to security vulnerabilities. You are responsible for ensuring your own internet connectivity and compatibility with our platforms.
-                </p>
-              </div>
-
-              <div id="indemnity" className="terms-section">
-                <h2>9. Indemnity</h2>
-                <p>
-                  You agree to indemnify, defend, and hold harmless Lyndan Limited, its directors, officers, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, or expenses (including reasonable legal fees) arising from:
-                </p>
-                <ol>
-                  <li>Your breach of these Terms or any applicable New Zealand laws.</li>
-                  <li>Your negligence, willful misconduct, or failure to maintain safe conditions on your property.</li>
-                  <li>Any inaccurate or fraudulent information provided by you or your representatives.</li>
-                  <li>Any claims by contractors, visitors, or third parties accessing your site via the Sentry system (app).</li>
-                </ol>
-              </div>
-
-              <div id="termination" className="terms-section">
-                <h2>10. Term &amp; Termination</h2>
-                <p>
-                  These Terms remain in effect until terminated in accordance with this section or your specific service agreement.
-                </p>
+                <h2>9. Warranties &amp; Consumer Guarantees</h2>
                 <ul>
                   <li>
-                    <strong>Termination for Convenience:</strong> Unless otherwise agreed in writing, either party may terminate an active software subscription or consultation agreement by giving thirty (30) days written notice to the other party.
+                    <strong>Reasonable Care:</strong> Lyndan warrants that its services will be performed with reasonable care and skill, consistent with the guarantees provided under the Consumer Guarantees Act 1993 (where applicable).
                   </li>
                   <li>
-                    <strong>Termination for Cause:</strong> Lyndan Limited may suspend or terminate your access to our applications and services immediately if you commit a material breach of these Terms (including non-payment of fees) and fail to remedy such breach within seven (7) days of receiving written notice, or if you become insolvent or go into liquidation.
+                    <strong>Business Exclusions:</strong> Where the Client is acquiring services and software applications for business purposes, the parties agree that the Consumer Guarantees Act 1993 and sections 9, 12A, and 13 of the Fair Trading Act 1986 do not apply, and that this exclusion is fair and reasonable.
                   </li>
                   <li>
-                    <strong>Effect of Termination:</strong> Upon termination, your right to use our software applications will immediately cease, all outstanding fees become instantly payable, and you must return or delete any proprietary materials in your possession.
+                    <strong>Statutory Exclusions:</strong> Nothing in this agreement excludes, restricts, or modifies any right or remedy, or any guarantee, condition, or warranty implied or imposed by any legislation that cannot lawfully be excluded, restricted, or modified.
+                  </li>
+                  <li>
+                    <strong>Software Disclaimer:</strong> We do not guarantee that our software systems (Compliance system (app) and Sentry system (app)) will be completely error-free, uninterrupted, or immune to security vulnerabilities. You are responsible for ensuring your own internet connectivity and compatibility with our platforms.
                   </li>
                 </ul>
               </div>
 
-              <div id="governing-law" className="terms-section">
-                <h2>11. Governing Law &amp; Jurisdiction</h2>
+              <div id="liability" className="terms-section">
+                <h2>10. Limitation of Liability</h2>
+                <ul>
+                  <li>
+                    <strong>Cap on Liability:</strong> To the maximum extent permitted by law, Lyndan&apos;s total aggregate liability under or in connection with this agreement, whether in contract, tort (including negligence), equity, under statute, or otherwise, is limited to the total fees paid by the Client to Lyndan in the twelve (12) months immediately preceding the event giving rise to the claim.
+                  </li>
+                  <li>
+                    <strong>Indirect Loss Exclusion:</strong> Lyndan shall not be liable for any indirect, consequential, special, incidental, exemplary, or punitive loss or damage, including loss of profits, loss of revenue, loss of opportunity, or loss of data, regardless of whether such loss was foreseeable.
+                  </li>
+                  <li>
+                    <strong>Client Delays:</strong> Lyndan is not liable for delays or failures caused by the Client&apos;s failure to provide access, information, or approvals as required under this agreement.
+                  </li>
+                  <li>
+                    <strong>Third-Party IQPs:</strong> Lyndan is not liable for the performance, workmanship, or professional opinions of third-party IQPs or contractors, though Lyndan will exercise reasonable diligence in their coordination.
+                  </li>
+                  <li>
+                    <strong>Limitation Period:</strong> Any claim arising under this agreement must be brought within six (6) years from the date on which the cause of action accrued, in accordance with the Limitation Act 2010.
+                  </li>
+                </ul>
+              </div>
+
+              <div id="indemnity" className="terms-section">
+                <h2>11. Indemnity</h2>
                 <p>
-                  These Terms, and any dispute or claim arising out of or in connection with them, are governed by and construed in accordance with the laws of New Zealand.
+                  The Client indemnifies Lyndan against all claims, losses, damages, costs, and expenses (including reasonable legal fees) arising from or in connection with:
+                </p>
+                <ul>
+                  <li>The Client&apos;s failure to comply with its obligations under this agreement.</li>
+                  <li>The Client&apos;s failure to act on defect escalations or remediation recommendations provided by Lyndan within a reasonable timeframe.</li>
+                  <li>Any breach by the Client of its obligations under the Building Act 2004, the Health and Safety at Work Act 2015, or any other applicable legislation.</li>
+                  <li>Your negligence, willful misconduct, or failure to maintain safe conditions on your property.</li>
+                  <li>Any inaccurate or fraudulent information provided by you or your representatives.</li>
+                  <li>Any claims by contractors, visitors, or third parties accessing your site via the Sentry system (app).</li>
+                </ul>
+              </div>
+
+              <div id="termination" className="terms-section">
+                <h2>12. Termination</h2>
+                <ul>
+                  <li>
+                    <strong>Termination for Convenience:</strong> Unless otherwise agreed in writing, either party may terminate this agreement by giving thirty (30) days&apos; written notice after the initial term.
+                  </li>
+                  <li>
+                    <strong>Termination for Non-Payment:</strong> Lyndan may terminate this agreement immediately if the Client fails to pay invoices within sixty (60) days of the due date, without prejudice to Lyndan&apos;s rights under the Construction Contracts Act 2002.
+                  </li>
+                  <li>
+                    <strong>Termination for Material Breach:</strong> Either party may terminate immediately if the other party commits a material breach of these Terms and fails to remedy such breach within fourteen (14) days of receiving written notice specifying the breach.
+                  </li>
+                  <li>
+                    <strong>Insolvency &amp; Liquidation:</strong> Either party may terminate immediately if the other party becomes insolvent, enters liquidation or receivership, or has a statutory demand served upon it under the Companies Act 1993.
+                  </li>
+                  <li>
+                    <strong>Effect of Termination:</strong> Upon termination, your right to use our software applications will immediately cease, all outstanding fees become instantly payable, the data export and deletion provisions in Clause 8 apply, and you must return or delete any proprietary materials in your possession.
+                  </li>
+                </ul>
+              </div>
+
+              <div id="dispute-resolution" className="terms-section">
+                <h2>13. Dispute Resolution</h2>
+                <ul>
+                  <li>
+                    <strong>Good-Faith Negotiation:</strong> Any dispute arising under or in connection with this agreement shall first be addressed through good-faith negotiation between senior representatives of each party for a period of not less than ten (10) business days.
+                  </li>
+                  <li>
+                    <strong>Mediation:</strong> If the dispute cannot be resolved by negotiation, either party may refer the dispute to mediation administered by the Arbitrators&apos; and Mediators&apos; Institute of New Zealand (AMINZ) in accordance with the AMINZ Mediation Protocol. The costs of mediation shall be shared equally.
+                  </li>
+                  <li>
+                    <strong>Adjudication:</strong> If the dispute relates to a payment claim or a payment schedule under the Construction Contracts Act 2002, either party may refer the dispute to adjudication under Part 3 of that Act.
+                  </li>
+                  <li>
+                    <strong>Litigation:</strong> If the dispute is not resolved by mediation within thirty (30) business days of referral (or such longer period as the parties agree), either party may commence court proceedings.
+                  </li>
+                </ul>
+              </div>
+
+              <div id="force-majeure" className="terms-section">
+                <h2>14. Force Majeure</h2>
+                <p>
+                  Neither party shall be liable for any failure or delay in performing its obligations where such failure or delay results from circumstances beyond reasonable control, including (but not limited to) natural disaster, pandemic, epidemic, government action or restriction, civil emergency, fire, flood, earthquake, failure of third-party telecommunications or infrastructure, or any event that could not have been reasonably foreseen or prevented. 
                 </p>
                 <p>
-                  Both parties irrevocably submit to the exclusive jurisdiction of the courts of New Zealand to resolve any dispute, controversy, or claim arising out of or relating to these Terms.
+                  The affected party must notify the other party as soon as reasonably practicable and take reasonable steps to mitigate the effects. If a force majeure event continues for more than sixty (60) days, either party may terminate this agreement by written notice.
                 </p>
               </div>
 
-              <div id="changes" className="terms-section">
-                <h2>12. Changes to Terms</h2>
-                <p>
-                  We may revise these Terms of Service from time to time to reflect modifications to our services, changes in law, or regulatory updates. We will notify you of any material changes by posting the updated Terms on this page and updating the &quot;Last Updated&quot; date at the top, or by sending an email notification.
-                </p>
-                <p>
-                  Your continued use of our applications or services after any changes become effective constitutes your acceptance of the revised Terms.
-                </p>
-              </div>
-
-              <div id="contact" className="terms-section">
-                <h2>13. Contact Information</h2>
-                <p>
-                  If you have any questions, concerns, or requests regarding these Terms of Service, please contact us at:
-                </p>
-                <div style={{
-                  background: 'rgba(43, 92, 148, 0.05)',
-                  padding: '1.5rem',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-color)',
-                  marginTop: '1rem',
-                  display: 'inline-block'
-                }}>
-                  <strong style={{ display: 'block', marginBottom: '0.25rem', fontSize: '1.1rem', color: 'var(--primary-dark)' }}>Lyndan Limited</strong>
-                  <span style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>Building compliance and asset management</span>
-                  <span style={{ display: 'block', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>New Zealand</span>
-                  <span style={{ display: 'block', fontSize: '0.95rem' }}>
-                    <strong>Email:</strong> <a href="mailto:office@lyndan.co.nz" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>office@lyndan.co.nz</a>
-                  </span>
-                </div>
+              <div id="general" className="terms-section">
+                <h2>15. General</h2>
+                <ul>
+                  <li>
+                    <strong>Entire Agreement:</strong> This document, together with the accompanying quotation/proposal and any signed Purchase Order/Service Agreement, constitutes the entire agreement between the parties and supersedes all prior negotiations, representations, and agreements, whether written or oral, in accordance with Part 2 of the Contract and Commercial Law Act 2017.
+                  </li>
+                  <li>
+                    <strong>Variation:</strong> No amendment to this agreement shall be effective unless agreed in writing and signed by both parties.
+                  </li>
+                  <li>
+                    <strong>Assignment:</strong> Neither party may assign or transfer its rights or obligations under this agreement without the prior written consent of the other party, such consent not to be unreasonably withheld.
+                  </li>
+                  <li>
+                    <strong>Severability:</strong> If any provision of this agreement is found to be invalid or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect.
+                  </li>
+                  <li>
+                    <strong>Waiver:</strong> A failure or delay by either party in exercising any right or remedy under this agreement does not constitute a waiver of that right or remedy.
+                  </li>
+                  <li>
+                    <strong>Notices:</strong> All formal notices under this agreement must be in writing and delivered by email.
+                  </li>
+                  <li>
+                    <strong>Jurisdiction:</strong> This agreement is governed by and construed in accordance with the laws of New Zealand, and the parties submit to the non-exclusive jurisdiction of the New Zealand courts.
+                  </li>
+                </ul>
               </div>
 
             </article>
