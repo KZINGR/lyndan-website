@@ -228,9 +228,16 @@ a {
   box-shadow: 0 4px 14px rgba(43, 92, 148, 0.4);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(43, 92, 148, 0.6);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .btn-outline {

@@ -1,11 +1,15 @@
 'use client';
 
-import React, { useRef, useEffect, useState, useActionState } from 'react';
+import React, { useRef, useEffect, useState, useActionState, useCallback } from 'react';
 import { useFormStatus } from 'react-dom';
 import Script from 'next/script';
 import { sendEmail } from '@/app/actions/send-email';
 
-function SubmitButton({ turnstileReady }: { turnstileReady: boolean }) {
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+type TurnstileStatus = 'loading' | 'ready' | 'error';
+
+function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
@@ -13,7 +17,7 @@ function SubmitButton({ turnstileReady }: { turnstileReady: boolean }) {
       type="submit"
       className="btn btn-primary"
       style={{ width: '100%', padding: '1rem' }}
-      disabled={pending || !turnstileReady}
+      disabled={pending}
     >
       {pending ? 'Sending...' : 'Send Message'}
     </button>
@@ -24,49 +28,114 @@ export default function ContactForm() {
   const [state, formAction] = useActionState(sendEmail, null);
   const formRef = useRef<HTMLFormElement>(null);
   const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState<string>('');
-  const [turnstileReady, setTurnstileReady] = useState(false);
+  const [turnstileStatus, setTurnstileStatus] = useState<TurnstileStatus>(
+    SITE_KEY ? 'loading' : 'error'
+  );
+  const [clientError, setClientError] = useState<string>('');
   const [renderTimestamp] = useState(() => btoa(Date.now().toString()));
 
-  // Render Turnstile widget once the script has loaded
-  const handleTurnstileLoad = () => {
-    if (turnstileRef.current && window.turnstile) {
-      window.turnstile.render(turnstileRef.current, {
-        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
+  // Render the Turnstile widget. Next's <Script onReady> fires on first load and
+  // again on every remount (e.g. navigating back to /contact), so tear down any
+  // previous widget first rather than rendering twice into the same container.
+  const renderTurnstile = useCallback(() => {
+    if (!turnstileRef.current || !window.turnstile) return;
+
+    if (!SITE_KEY) {
+      console.error('NEXT_PUBLIC_TURNSTILE_SITE_KEY was not set at build time');
+      setTurnstileStatus('error');
+      return;
+    }
+
+    if (widgetIdRef.current !== null) {
+      try {
+        window.turnstile.remove(widgetIdRef.current);
+      } catch {
+        // Widget was already gone — nothing to clean up.
+      }
+      widgetIdRef.current = null;
+    }
+
+    try {
+      widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: SITE_KEY,
         callback: (token: string) => {
           setTurnstileToken(token);
-          setTurnstileReady(true);
+          setTurnstileStatus('ready');
+          setClientError('');
         },
         'expired-callback': () => {
           setTurnstileToken('');
-          setTurnstileReady(false);
+          setTurnstileStatus('loading');
         },
         'error-callback': () => {
           setTurnstileToken('');
-          setTurnstileReady(false);
+          setTurnstileStatus('error');
         },
         theme: 'dark',
         appearance: 'interaction-only',
       });
+    } catch (error) {
+      console.error('Turnstile render failed:', error);
+      setTurnstileStatus('error');
     }
-  };
+  }, []);
 
-  // Reset Turnstile after successful submission or error
+  // Covers the case where the script had already loaded before this component
+  // mounted, so onReady is not guaranteed to run after window.turnstile exists.
+  // Deferred by a tick so onReady wins the race when it is about to fire anyway.
   useEffect(() => {
-    if (state?.success && window.turnstile) {
-      window.turnstile.reset();
+    const timer = setTimeout(() => {
+      if (window.turnstile && widgetIdRef.current === null) renderTurnstile();
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [renderTurnstile]);
+
+  useEffect(() => {
+    return () => {
+      if (widgetIdRef.current !== null && window.turnstile) {
+        try {
+          window.turnstile.remove(widgetIdRef.current);
+        } catch {
+          // Widget was already gone — nothing to clean up.
+        }
+        widgetIdRef.current = null;
+      }
+    };
+  }, []);
+
+  // Reset Turnstile after a submission so the next attempt gets a fresh token.
+  useEffect(() => {
+    if (state && widgetIdRef.current !== null && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
       setTurnstileToken('');
-      setTurnstileReady(false);
+      setTurnstileStatus('loading');
     }
   }, [state]);
+
+  // Guard the submit so a missing token shows a message instead of doing nothing.
+  // The server verifies the token again regardless.
+  const handleAction = (formData: FormData) => {
+    if (!turnstileToken) {
+      setClientError(
+        turnstileStatus === 'error'
+          ? 'The security check could not load. Please refresh the page, or email us directly at office@lyndan.co.nz.'
+          : 'Please complete the security check above, then send again.'
+      );
+      return;
+    }
+    setClientError('');
+    formAction(formData);
+  };
 
   if (state?.success) {
     return (
       <div style={{ padding: '2rem', background: 'var(--bg-dark)', borderRadius: '12px', border: '1px solid var(--border-color)', textAlign: 'center' }}>
         <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#16a34a' }}>Message Sent!</h3>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Thank you for reaching out. We will get back to you shortly.</p>
-        <button 
-          className="btn btn-outline" 
+        <button
+          className="btn btn-outline"
           onClick={() => {
             window.location.reload();
           }}
@@ -77,17 +146,20 @@ export default function ContactForm() {
     );
   }
 
+  const errorMessage = clientError || state?.error;
+
   return (
     <>
       <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit"
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
-        onReady={handleTurnstileLoad}
+        onReady={renderTurnstile}
+        onError={() => setTurnstileStatus('error')}
       />
-      <form ref={formRef} action={formAction} className="contact-form">
-        {state?.error && (
+      <form ref={formRef} action={handleAction} className="contact-form">
+        {errorMessage && (
           <div style={{ padding: '1rem', backgroundColor: '#fee2e2', color: '#b91c1c', borderRadius: '8px', marginBottom: '1rem' }}>
-            {state.error}
+            {errorMessage}
           </div>
         )}
 
@@ -102,7 +174,7 @@ export default function ContactForm() {
 
         {/* Turnstile token */}
         <input type="hidden" name="cf-turnstile-response" value={turnstileToken} />
-        
+
         <div className="form-group">
           <label htmlFor="name" className="form-label">Full Name</label>
           <input type="text" id="name" name="name" className="form-input" placeholder="John Doe" required />
@@ -126,7 +198,7 @@ export default function ContactForm() {
         {/* Turnstile widget container */}
         <div ref={turnstileRef} style={{ marginBottom: '1rem' }}></div>
 
-        <SubmitButton turnstileReady={turnstileReady} />
+        <SubmitButton />
       </form>
     </>
   );

@@ -18,6 +18,12 @@ COPY . .
 # Disable telemetry during build
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# NEXT_PUBLIC_* vars are inlined into the client bundle at build time, so this
+# must be present here — setting it on Cloud Run at runtime has no effect.
+# The Turnstile *site* key is public by design (it ships in the client bundle).
+ARG NEXT_PUBLIC_TURNSTILE_SITE_KEY
+ENV NEXT_PUBLIC_TURNSTILE_SITE_KEY=${NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+
 RUN npm run build
 
 # Production image, copy all the files and run next
