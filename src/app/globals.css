@@ -901,6 +901,7 @@ a.info-group:hover .info-value {
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
+  text-wrap: balance;
 }
 
 .feature-item p {

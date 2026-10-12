@@ -6,6 +6,60 @@ export const metadata = {
   description: 'A specialized contractor sign-in and management system built for commercial and body corporate environments.',
 };
 
+const iconProps = {
+  width: 28,
+  height: 28,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.8,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+};
+
+const features = [
+  {
+    title: 'Seamless Contractor Sign\u2011In',
+    text: 'Quick, QR-code based digital sign-in for contractors upon arriving at the site, ensuring accurate tracking without the hassle of paper logs.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3z" />
+        <path d="M14 14h3v3h-3zM20 14v1M14 20h1M18 18h3v3h-3z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Live Admin Dashboard',
+    text: 'Gain full visibility with an online dashboard that allows building and facility managers to view real-time contractor activity across their sites.',
+    icon: (
+      <svg {...iconProps}>
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4M7 12l3-3 3 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Health & Safety Compliance',
+    text: 'Ensure all contractors review and acknowledge site-specific health and safety hazards, as well as emergency procedures, before being granted entry.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Automated Reporting',
+    text: 'Generate detailed access logs for robust security audits, straightforward invoicing validation, and comprehensive compliance tracking.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+        <path d="M14 3v5h5M9 17v-3M12 17v-5M15 17v-2" />
+      </svg>
+    ),
+  },
+];
+
 export default function SentryServices() {
   return (
     <main>
@@ -25,33 +79,16 @@ export default function SentryServices() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}>
             
             {/* Core Features */}
-            <div className="system-card card-sentry" style={{ height: 'auto', gridColumn: '1 / -1' }}>
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 600, marginBottom: '2rem' }}>Core Software Features</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Seamless Contractor Sign-In</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Quick, QR-code based digital sign-in for contractors upon arriving at the site, ensuring accurate tracking without the hassle of paper logs.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Live Admin Dashboard</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Gain full visibility with an online dashboard that allows building and facility managers to view real-time contractor activity across their sites.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Health & Safety Compliance</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Ensure all contractors review and acknowledge site-specific health and safety hazards, as well as emergency procedures, before being granted entry.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Automated Reporting</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Generate detailed access logs for robust security audits, straightforward invoicing validation, and comprehensive compliance tracking.
-                  </p>
-                </div>
+            <div className="system-card card-sentry feature-card" style={{ height: 'auto', gridColumn: '1 / -1' }}>
+              <h2 className="feature-heading">Core Software Features</h2>
+              <div className="feature-grid">
+                {features.map((f) => (
+                  <div key={f.title} className="feature-item">
+                    <div className="feature-icon" aria-hidden="true">{f.icon}</div>
+                    <h3>{f.title}</h3>
+                    <p>{f.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
