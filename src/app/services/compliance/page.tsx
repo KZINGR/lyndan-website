@@ -6,6 +6,59 @@ export const metadata = {
   description: 'Streamline your building compliance with our cloud-based software designed for complete BWoF workflow management.',
 };
 
+const iconProps = {
+  width: 28,
+  height: 28,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.8,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+};
+
+const features = [
+  {
+    title: 'End-to-End Workflow',
+    text: 'Manage the entire BWoF process from a centralised platform, effortlessly tracking inspections, identifying defects, and managing documentation in real-time.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M3 12h4l3-8 4 16 3-8h4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Digital BWoF Book',
+    text: 'Replace traditional paper logbooks with a secure digital version accessible anywhere by councils, contractors, owners, and management entities.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" />
+        <path d="M4 19V5M9 8h6" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Automated Reminders',
+    text: 'Never miss an inspection with automated scheduling and reliable alerts tailored for both IQPs and building owners.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Centralised Document Storage',
+    text: 'Securely store essential compliance forms such as Form 12s, Form 12As, compliance schedules, and historical records all in one accessible location.',
+    icon: (
+      <svg {...iconProps}>
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+        <path d="M14 3v5h5M9 13h6M9 17h6" />
+      </svg>
+    ),
+  },
+];
+
 export default function ComplianceServices() {
   return (
     <main>
@@ -25,33 +78,16 @@ export default function ComplianceServices() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}>
 
             {/* Core Features */}
-            <div className="system-card card-compliance" style={{ height: 'auto', gridColumn: '1 / -1' }}>
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 600, marginBottom: '2rem' }}>Core Software Features</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>End-to-End Workflow</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Manage the entire BWoF process from a centralised platform, effortlessly tracking inspections, identifying defects, and managing documentation in real-time.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Digital BWoF Book</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Replace traditional paper logbooks with a secure digital version accessible anywhere by councils, contractors, owners, and management entities.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Automated Reminders</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Never miss an inspection with automated scheduling and reliable alerts tailored for both IQPs and building owners.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem' }}>Centralised Document Storage</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Securely store essential compliance forms such as Form 12s, Form 12As, compliance schedules, and historical records all in one accessible location.
-                  </p>
-                </div>
+            <div className="system-card card-compliance feature-card" style={{ height: 'auto', gridColumn: '1 / -1' }}>
+              <h2 className="feature-heading">Core Software Features</h2>
+              <div className="feature-grid">
+                {features.map((f) => (
+                  <div key={f.title} className="feature-item">
+                    <div className="feature-icon" aria-hidden="true">{f.icon}</div>
+                    <h3>{f.title}</h3>
+                    <p>{f.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
